@@ -6,6 +6,9 @@
 - **Lost in the middle:** information buried in the middle of a long context is used less reliably than information at the start or end. Put critical facts at the **top** (or near the query at the end) and repeat key constraints close to the question.
 
 ## 2. Strategies for long-running agents
+
+![Case facts vs summarisation](../diagrams/09-case-facts.svg)
+
 | Technique | How | Watch out for |
 |---|---|---|
 | **Compaction / summarisation** | Summarise old turns and continue with the summary | **Progressive summarisation loses detail.** Exact numbers, IDs, dates and commitments get paraphrased or dropped over successive summaries. |
@@ -16,6 +19,9 @@
 | **Just-in-time retrieval** | Keep identifiers (paths, URLs, IDs) and load the content only when needed | Retrieval latency |
 
 ## 3. Prompt caching
+
+![Prompt caching](../diagrams/08-prompt-caching.svg)
+
 - Mark a stable prefix with `cache_control: {"type": "ephemeral"}` on a block. The cache covers tools, then system, then messages, **in that order**, up to that breakpoint.
 - The default TTL is **5 minutes**, refreshed on each hit. A **1-hour** TTL is available at a higher write cost.
 - **Cache writes** cost more than base input tokens, and **cache reads** cost far less (about 10%). Check `cache_creation_input_tokens` and `cache_read_input_tokens` in `usage`.

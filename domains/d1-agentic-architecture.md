@@ -3,6 +3,9 @@
 The largest domain. It tests whether you can choose the **right shape** for a problem and run the **agent loop** correctly.
 
 ## 1. Workflows vs agents
+
+![Workflow patterns](../diagrams/02-workflow-patterns.svg)
+
 From Anthropic's *Building effective agents*:
 - **Workflow:** LLM calls orchestrated through **predefined code paths**. It is predictable, cheaper, and easier to test.
 - **Agent:** the LLM **dynamically directs** its own process and tool use. Use it when the steps can't be known in advance.
@@ -18,6 +21,9 @@ From Anthropic's *Building effective agents*:
 | Evaluator-optimiser | One LLM generates and another critiques in a loop | Clear evaluation criteria exist and iteration measurably helps |
 
 ## 2. The agent loop
+
+![Agent loop](../diagrams/01-agent-loop.svg)
+
 ```
 messages = [user_msg]
 while True:
@@ -37,6 +43,9 @@ Key facts:
 - Don't decide the loop is finished by parsing the assistant's text. Use `stop_reason`.
 
 ## 3. Single-agent vs multi-agent
+
+![Orchestrator and subagents](../diagrams/03-orchestrator-subagents.svg)
+
 - **Single agent** with good tools is the default. It is easier to debug and keeps all context in one place.
 - **Hub-and-spoke (orchestrator plus subagents)** helps when work is **parallelisable and breadth-first** (for example research across many sources), when subtasks need **separate context windows** to avoid pollution, or when they need different tools or permissions.
 - Costs: many times the tokens, coordination overhead, and harder debugging. Anthropic's multi-agent research system reported large quality gains on breadth-heavy research but also much higher token use.

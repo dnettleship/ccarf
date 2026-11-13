@@ -26,6 +26,16 @@ Personal study materials for Anthropic's **Claude Certified Architect – Founda
 | D4 | Prompt Engineering & Structured Output | 20% | [domains/d4-prompt-engineering.md](domains/d4-prompt-engineering.md) |
 | D5 | Context Management & Reliability | 15% | [domains/d5-context-reliability.md](domains/d5-context-reliability.md) |
 
+## Diagrams
+
+| | |
+|---|---|
+| ![Agent loop](diagrams/01-agent-loop.svg) | ![Workflow patterns](diagrams/02-workflow-patterns.svg) |
+| ![Orchestrator and subagents](diagrams/03-orchestrator-subagents.svg) | ![MCP architecture](diagrams/04-mcp-architecture.svg) |
+| ![Tool errors](diagrams/05-tool-errors.svg) | ![Claude Code config](diagrams/06-claude-code-config.svg) |
+| ![Structured output](diagrams/07-structured-output.svg) | ![Prompt caching](diagrams/08-prompt-caching.svg) |
+| ![Case facts](diagrams/09-case-facts.svg) | |
+
 ## Repo layout
 
 ```
@@ -34,6 +44,7 @@ study-plan.md           4-week plan (with 2- and 8-week variants)
 cheat-sheet.md          one-page last-minute review
 resources.md            official docs and courses to read
 domains/                deep notes, one file per domain
+diagrams/               SVG diagrams (embedded in the domain notes)
 practice/questions.md   scenario-style practice questions with explained answers
 flashcards/cards.csv    flashcards (front,back,domain), importable into Anki
 labs/                   hands-on exercises to do with the API and Claude Code

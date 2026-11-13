@@ -31,6 +31,9 @@
 - When `tool_choice` is `any` or a specific tool, the response is prefilled to call it, so Claude writes no explanatory text before the `tool_use` block. Extended thinking only supports `auto` or `none`.
 
 ## 3. Tool errors
+
+![Tool error handling](../diagrams/05-tool-errors.svg)
+
 Return errors as a `tool_result` with `"is_error": true` and an **actionable message**. Claude can then recover by retrying, fixing input, asking the user, or choosing another path.
 
 Useful error categories to distinguish (community guides cite four):
@@ -47,6 +50,9 @@ Don't swallow errors, and don't return an empty success. Claude can't tell "no r
 - **Anthropic-defined client tools** (bash, text editor, computer use, memory) have schemas built into the model, but your code still executes them.
 
 ## 5. Model Context Protocol (MCP)
+
+![MCP architecture](../diagrams/04-mcp-architecture.svg)
+
 - An open protocol for connecting LLM applications (**hosts/clients**) to external capabilities (**servers**).
 - A server exposes three kinds of primitive:
   - **Tools** (model-controlled): actions or functions the model can call.

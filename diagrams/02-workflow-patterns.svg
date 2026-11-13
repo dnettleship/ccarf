@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 610" width="960" height="610" role="img" aria-label="Workflow patterns and the autonomous agent">
+<title>Workflow patterns and the autonomous agent</title>
+<style>
+text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2937}
+.t{font-size:22px;font-weight:700}.h{font-size:15px;font-weight:600}.s{font-size:13px}
+.xs{font-size:11.5px;fill:#4b5563}.m{font-family:SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+.b{font-weight:700}.c{text-anchor:middle}.w{fill:#fff;font-weight:700;font-size:12px}
+.box{fill:#fff;stroke:#94a3b8;stroke-width:1.5}.gray{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}
+.blue{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.5}.orange{fill:#fff7ed;stroke:#f97316;stroke-width:1.5}
+.green{fill:#ecfdf5;stroke:#10b981;stroke-width:1.5}.red{fill:#fef2f2;stroke:#ef4444;stroke-width:1.5}
+.purple{fill:#f5f3ff;stroke:#8b5cf6;stroke-width:1.5}
+.ln{stroke:#475569;stroke-width:1.6;fill:none;marker-end:url(#a)}.bi{marker-start:url(#a)}
+.bus{stroke:#475569;stroke-width:1.6;fill:none}.dash{stroke-dasharray:6 4}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+<rect width="960" height="610" fill="#ffffff"/>
+<text x="40" y="46" class="t">Workflows vs agents — five patterns + the autonomous agent</text>
+<text x="40" y="70" class="xs">Start with the simplest pattern that meets the requirement. Reach for an agent only when the steps can't be known in advance.</text>
+<g transform="translate(40,90)">
+<rect width="280" height="235" rx="12" class="box"/>
+<text x="16" y="30" class="h">1 · Prompt chaining</text>
+<rect x="12" y="92" width="40" height="34" rx="6" class="gray"/><text x="32" y="114" class="s c">In</text>
+<rect x="70" y="92" width="58" height="34" rx="6" class="blue"/><text x="99" y="114" class="s c">LLM 1</text>
+<polygon points="164,91 184,109 164,127 144,109" class="purple"/><text x="164" y="146" class="xs c">gate</text>
+<rect x="202" y="92" width="58" height="34" rx="6" class="blue"/><text x="231" y="114" class="s c">LLM 2</text>
+<path d="M52 109 H68" class="ln"/><path d="M128 109 H142" class="ln"/><path d="M184 109 H200" class="ln"/>
+<text x="16" y="195" class="s">Fixed steps: output → next input</text>
+<text x="16" y="216" class="xs">Gates = programmatic checks between steps</text>
+</g>
+<g transform="translate(340,90)">
+<rect width="280" height="235" rx="12" class="box"/>
+<text x="16" y="30" class="h">2 · Routing</text>
+<rect x="12" y="92" width="40" height="34" rx="6" class="gray"/><text x="32" y="114" class="s c">In</text>
+<rect x="68" y="92" width="64" height="34" rx="6" class="blue"/><text x="100" y="114" class="s c">Router</text>
+<rect x="172" y="52" width="96" height="30" rx="6" class="gray"/><text x="220" y="72" class="xs c">Haiku · FAQ</text>
+<rect x="172" y="94" width="96" height="30" rx="6" class="gray"/><text x="220" y="114" class="xs c">Sonnet · tech</text>
+<rect x="172" y="136" width="96" height="30" rx="6" class="gray"/><text x="220" y="156" class="xs c">Human · refund</text>
+<path d="M52 109 H66" class="ln"/><path d="M132 109 L170 67" class="ln"/><path d="M132 109 H170" class="ln"/><path d="M132 109 L170 151" class="ln"/>
+<text x="16" y="195" class="s">Classify, then hand off</text>
+<text x="16" y="216" class="xs">Use when inputs fall into distinct categories</text>
+</g>
+<g transform="translate(640,90)">
+<rect width="280" height="235" rx="12" class="box"/>
+<text x="16" y="30" class="h">3 · Parallelisation</text>
+<rect x="12" y="92" width="40" height="34" rx="6" class="gray"/><text x="32" y="114" class="s c">In</text>
+<rect x="78" y="52" width="60" height="30" rx="6" class="blue"/><text x="108" y="72" class="xs c">LLM</text>
+<rect x="78" y="94" width="60" height="30" rx="6" class="blue"/><text x="108" y="114" class="xs c">LLM</text>
+<rect x="78" y="136" width="60" height="30" rx="6" class="blue"/><text x="108" y="156" class="xs c">LLM</text>
+<rect x="172" y="92" width="96" height="34" rx="6" class="green"/><text x="220" y="114" class="s c">Aggregate</text>
+<path d="M52 109 L76 67" class="ln"/><path d="M52 109 H76" class="ln"/><path d="M52 109 L76 151" class="ln"/><path d="M138 67 L170 103" class="ln"/><path d="M138 109 H170" class="ln"/><path d="M138 151 L170 115" class="ln"/>
+<text x="16" y="195" class="s">Sectioning: independent parts</text>
+<text x="16" y="216" class="xs">Voting: same task N times, then compare</text>
+</g>
+<g transform="translate(40,350)">
+<rect width="280" height="235" rx="12" class="box"/>
+<text x="16" y="30" class="h">4 · Orchestrator–workers</text>
+<rect x="80" y="50" width="120" height="34" rx="6" class="blue"/><text x="140" y="72" class="s c">Orchestrator</text>
+<rect x="12" y="120" width="80" height="30" rx="6" class="gray"/><text x="52" y="140" class="xs c">Worker</text>
+<rect x="100" y="120" width="80" height="30" rx="6" class="gray"/><text x="140" y="140" class="xs c">Worker</text>
+<rect x="188" y="120" width="80" height="30" rx="6" class="gray"/><text x="228" y="140" class="xs c">Worker</text>
+<path d="M140 84 L56 118" class="ln"/><path d="M140 84 V118" class="ln"/><path d="M140 84 L224 118" class="ln"/>
+<text x="16" y="195" class="s">Subtasks decided at runtime</text>
+<text x="16" y="216" class="xs">e.g. multi-file code changes, research</text>
+</g>
+<g transform="translate(340,350)">
+<rect width="280" height="235" rx="12" class="box"/>
+<text x="16" y="30" class="h">5 · Evaluator–optimiser</text>
+<rect x="16" y="90" width="104" height="40" rx="6" class="orange"/><text x="68" y="115" class="s c">Generator</text>
+<rect x="160" y="90" width="104" height="40" rx="6" class="green"/><text x="212" y="115" class="s c">Evaluator</text>
+<path d="M90 90 C110 52 170 52 190 88" class="ln"/><text x="140" y="60" class="xs c">draft</text>
+<path d="M190 130 C170 168 110 168 92 132" class="ln"/><text x="140" y="172" class="xs c">feedback</text>
+<text x="16" y="200" class="s">Generate → critique → refine</text>
+<text x="16" y="220" class="xs">Use when clear criteria exist and iteration helps</text>
+</g>
+<g transform="translate(640,350)">
+<rect width="280" height="235" rx="12" class="orange"/>
+<text x="16" y="30" class="h">★ Autonomous agent</text>
+<rect x="20" y="60" width="110" height="36" rx="6" class="blue"/><text x="75" y="83" class="s c">LLM (agent)</text>
+<rect x="20" y="140" width="110" height="36" rx="6" class="gray"/><text x="75" y="163" class="s c">Tools / env</text>
+<path d="M55 96 V138" class="ln"/><path d="M95 140 V98" class="ln"/>
+<text x="140" y="114" class="xs">↓ tool call</text><text x="140" y="130" class="xs">↑ tool result</text>
+<rect x="190" y="60" width="74" height="36" rx="6" class="green"/><text x="227" y="83" class="s c">Done</text>
+<path d="M130 78 H188" class="ln"/>
+<text x="16" y="205" class="s">Model directs its own steps</text>
+<text x="16" y="224" class="xs">Most flexible · highest cost, latency and risk</text>
+</g>
+</svg>

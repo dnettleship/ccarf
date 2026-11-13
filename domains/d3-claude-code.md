@@ -1,5 +1,8 @@
 # D3 — Claude Code Configuration & Workflows (20%)
 
+![Claude Code configuration map](../diagrams/06-claude-code-config.svg)
+
+
 ## 1. Memory: CLAUDE.md
 | Level | Location | Shared? |
 |---|---|---|

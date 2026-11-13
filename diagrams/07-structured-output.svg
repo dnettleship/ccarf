@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="Structured output reliability and validation">
+<title>Structured output reliability and validation</title>
+<style>
+text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2937}
+.t{font-size:22px;font-weight:700}.h{font-size:15px;font-weight:600}.s{font-size:13px}
+.xs{font-size:11.5px;fill:#4b5563}.m{font-family:SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+.b{font-weight:700}.c{text-anchor:middle}.w{fill:#fff;font-weight:700;font-size:12px}
+.box{fill:#fff;stroke:#94a3b8;stroke-width:1.5}.gray{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}
+.blue{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.5}.orange{fill:#fff7ed;stroke:#f97316;stroke-width:1.5}
+.green{fill:#ecfdf5;stroke:#10b981;stroke-width:1.5}.red{fill:#fef2f2;stroke:#ef4444;stroke-width:1.5}
+.purple{fill:#f5f3ff;stroke:#8b5cf6;stroke-width:1.5}
+.ln{stroke:#475569;stroke-width:1.6;fill:none;marker-end:url(#a)}.bi{marker-start:url(#a)}
+.bus{stroke:#475569;stroke-width:1.6;fill:none}.dash{stroke-dasharray:6 4}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+<rect width="960" height="480" fill="#ffffff"/>
+<text x="40" y="46" class="t">Structured output — reliability ladder &amp; validation loop</text>
+<text x="40" y="70" class="xs">Pick the most reliable way to get valid JSON, then still validate the meaning in code.</text>
+<text x="80" y="140" class="h">1 · Getting valid JSON</text>
+<path d="M56 412 V166" class="ln"/>
+<text transform="translate(44,290) rotate(-90)" class="xs c">more reliable</text>
+<rect x="80" y="168" width="380" height="52" rx="8" class="green"/><text x="96" y="199" class="s"><tspan class="b">Structured outputs</tspan> (constrained decoding)</text>
+<rect x="80" y="232" width="330" height="52" rx="8" class="blue"/><text x="96" y="263" class="s"><tspan class="b">Forced tool</tspan>: tool_choice + input_schema</text>
+<rect x="80" y="296" width="280" height="52" rx="8" class="orange"/><text x="96" y="327" class="s">Prefill “{” + few-shot examples</text>
+<rect x="80" y="360" width="220" height="52" rx="8" class="red"/><text x="96" y="391" class="s">Prompt: “return only JSON”</text>
+<text x="80" y="442" class="xs">Make fields that may be absent nullable — required fields</text>
+<text x="80" y="460" class="xs">invite invented values. Use enums + "other".</text>
+<text x="560" y="140" class="h">2 · Then validate in code</text>
+<rect x="600" y="160" width="240" height="48" rx="8" class="blue"/><text x="720" y="189" class="s c">Claude call with schema</text>
+<path d="M720 208 V236" class="ln"/>
+<rect x="600" y="238" width="240" height="48" rx="8" class="purple"/><text x="720" y="267" class="s c">Validate: schema + business rules</text>
+<path d="M680 286 L627 328" class="ln"/>
+<path d="M760 286 L823 328" class="ln"/>
+<rect x="540" y="330" width="160" height="50" rx="8" class="green"/><text x="620" y="360" class="s c b">✓ Pass → store</text>
+<rect x="740" y="330" width="180" height="50" rx="8" class="orange"/><text x="830" y="352" class="s c">✗ Fail → send the</text><text x="830" y="370" class="s c">specific error back</text>
+<path d="M900 330 V184 H842" class="ln"/>
+<text x="906" y="262" class="xs">retry</text>
+<path d="M830 380 V408" class="ln"/>
+<rect x="740" y="410" width="180" height="44" rx="8" class="red"/><text x="830" y="437" class="s c">After N fails → human</text>
+</svg>

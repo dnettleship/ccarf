@@ -13,6 +13,9 @@
 Also: tell Claude what **to do** rather than only what not to do, and explain *why* a rule exists so it can generalise. Newer models follow instructions precisely, so ask explicitly for the behaviour you want, e.g. "make the changes" rather than "can you suggest…".
 
 ## 2. Structured output options
+
+![Structured output](../diagrams/07-structured-output.svg)
+
 | Approach | Reliability | Notes |
 |---|---|---|
 | "Respond in JSON" in the prompt | Lowest | Can drift, add prose, or break the schema |

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-label="The agent loop driven by stop_reason">
+<title>The agent loop driven by stop_reason</title>
+<style>
+text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2937}
+.t{font-size:22px;font-weight:700}.h{font-size:15px;font-weight:600}.s{font-size:13px}
+.xs{font-size:11.5px;fill:#4b5563}.m{font-family:SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+.b{font-weight:700}.c{text-anchor:middle}.w{fill:#fff;font-weight:700;font-size:12px}
+.box{fill:#fff;stroke:#94a3b8;stroke-width:1.5}.gray{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}
+.blue{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.5}.orange{fill:#fff7ed;stroke:#f97316;stroke-width:1.5}
+.green{fill:#ecfdf5;stroke:#10b981;stroke-width:1.5}.red{fill:#fef2f2;stroke:#ef4444;stroke-width:1.5}
+.purple{fill:#f5f3ff;stroke:#8b5cf6;stroke-width:1.5}
+.ln{stroke:#475569;stroke-width:1.6;fill:none;marker-end:url(#a)}.bi{marker-start:url(#a)}
+.bus{stroke:#475569;stroke-width:1.6;fill:none}.dash{stroke-dasharray:6 4}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+<rect width="960" height="560" fill="#ffffff"/>
+<text x="40" y="46" class="t">The agent loop — driven by stop_reason</text>
+<text x="40" y="70" class="xs">Never decide the loop is finished by parsing the model's text. Branch on stop_reason.</text>
+<rect x="40" y="110" width="180" height="60" rx="10" class="box"/>
+<text x="130" y="137" class="h c">User message</text>
+<text x="130" y="156" class="xs c">messages = [user]</text>
+<path d="M220 140 H298" class="ln"/>
+<rect x="300" y="110" width="300" height="60" rx="10" class="blue"/>
+<text x="450" y="137" class="h c">client.messages.create(…)</text>
+<text x="450" y="156" class="xs c">model · system · tools · messages</text>
+<path d="M450 170 V208" class="ln"/>
+<polygon points="450,210 570,262 450,314 330,262" class="purple"/>
+<text x="450" y="267" class="h c">stop_reason?</text>
+<path d="M570 262 H658" class="ln"/>
+<text x="614" y="252" class="m c b">tool_use</text>
+<rect x="660" y="232" width="260" height="60" rx="10" class="orange"/>
+<text x="790" y="259" class="h c">Run every tool_use block</text>
+<text x="790" y="278" class="xs c">parallel calls allowed — run them all</text>
+<path d="M790 232 V172" class="ln"/>
+<rect x="660" y="110" width="260" height="60" rx="10" class="orange"/>
+<text x="790" y="137" class="h c">Append tool_result blocks</text>
+<text x="790" y="156" class="xs c">same tool_use_id · in the next user message</text>
+<path d="M660 140 H602" class="ln"/>
+<text x="631" y="130" class="xs c">loop</text>
+<path d="M450 314 V350 M142 350 H817" class="bus"/>
+<path d="M142 350 V388" class="ln"/><path d="M367 350 V388" class="ln"/><path d="M592 350 V388" class="ln"/><path d="M817 350 V388" class="ln"/>
+<rect x="40" y="390" width="205" height="80" rx="10" class="green"/>
+<text x="142" y="416" class="m c b">end_turn</text>
+<text x="142" y="439" class="s c">Finished naturally —</text>
+<text x="142" y="457" class="s c">return the answer</text>
+<rect x="265" y="390" width="205" height="80" rx="10" class="red"/>
+<text x="367" y="416" class="m c b">max_tokens</text>
+<text x="367" y="439" class="s c">Truncated! Raise the limit</text>
+<text x="367" y="457" class="s c">or continue — not success</text>
+<rect x="490" y="390" width="205" height="80" rx="10" class="purple"/>
+<text x="592" y="416" class="m c b">pause_turn</text>
+<text x="592" y="439" class="s c">Server tool paused a long</text>
+<text x="592" y="457" class="s c">turn — send it back</text>
+<rect x="715" y="390" width="205" height="80" rx="10" class="gray"/>
+<text x="817" y="416" class="m c b">stop_sequence · refusal</text>
+<text x="817" y="439" class="s c">Custom stop string hit,</text>
+<text x="817" y="457" class="s c">or the model declined</text>
+<rect x="40" y="496" width="880" height="44" rx="10" class="red dash"/>
+<text x="480" y="523" class="s c">Guardrails on every loop: max iterations · token / cost budget · timeout — never an unbounded while True</text>
+</svg>

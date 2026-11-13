@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" role="img" aria-label="Orchestrator and subagents">
+<title>Orchestrator and subagents</title>
+<style>
+text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2937}
+.t{font-size:22px;font-weight:700}.h{font-size:15px;font-weight:600}.s{font-size:13px}
+.xs{font-size:11.5px;fill:#4b5563}.m{font-family:SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+.b{font-weight:700}.c{text-anchor:middle}.w{fill:#fff;font-weight:700;font-size:12px}
+.box{fill:#fff;stroke:#94a3b8;stroke-width:1.5}.gray{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}
+.blue{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.5}.orange{fill:#fff7ed;stroke:#f97316;stroke-width:1.5}
+.green{fill:#ecfdf5;stroke:#10b981;stroke-width:1.5}.red{fill:#fef2f2;stroke:#ef4444;stroke-width:1.5}
+.purple{fill:#f5f3ff;stroke:#8b5cf6;stroke-width:1.5}
+.ln{stroke:#475569;stroke-width:1.6;fill:none;marker-end:url(#a)}.bi{marker-start:url(#a)}
+.bus{stroke:#475569;stroke-width:1.6;fill:none}.dash{stroke-dasharray:6 4}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+<rect width="960" height="620" fill="#ffffff"/>
+<text x="40" y="46" class="t">Orchestrator + subagents (hub-and-spoke)</text>
+<text x="40" y="70" class="xs">Subagents start with an EMPTY context. They know only what the brief tells them, and should hand back condensed results.</text>
+<rect x="40" y="90" width="300" height="360" rx="12" class="blue"/>
+<text x="60" y="118" class="h">Orchestrator — own context</text>
+<rect x="60" y="135" width="260" height="46" rx="8" class="box"/><text x="190" y="163" class="s c">User goal &amp; constraints</text>
+<rect x="60" y="193" width="260" height="46" rx="8" class="box"/><text x="190" y="221" class="s c">Plan / task decomposition</text>
+<rect x="60" y="251" width="260" height="46" rx="8" class="box"/><text x="190" y="279" class="s c">Case facts (verbatim)</text>
+<rect x="60" y="309" width="260" height="46" rx="8" class="box"/><text x="190" y="337" class="s c">Condensed subagent results</text>
+<rect x="60" y="367" width="260" height="46" rx="8" class="green"/><text x="190" y="395" class="s c b">Synthesis → final answer</text>
+<g>
+<rect x="600" y="90" width="320" height="110" rx="12" class="orange"/>
+<text x="620" y="120" class="h">Subagent A — fresh context</text>
+<text x="620" y="144" class="s">Sees only its brief, not the parent chat</text>
+<text x="620" y="166" class="xs">Task: search academic sources</text>
+<text x="620" y="186" class="xs">Tools: web_search, web_fetch · model: Haiku</text>
+<path d="M340 131 H598" class="ln"/><text x="470" y="123" class="xs c">brief</text>
+<path d="M600 159 H342" class="ln dash"/><text x="470" y="177" class="xs c">condensed, structured result</text>
+</g>
+<g>
+<rect x="600" y="215" width="320" height="110" rx="12" class="orange"/>
+<text x="620" y="245" class="h">Subagent B — fresh context</text>
+<text x="620" y="269" class="s">Sees only its brief, not the parent chat</text>
+<text x="620" y="291" class="xs">Task: search news &amp; industry blogs</text>
+<text x="620" y="311" class="xs">Tools: web_search, web_fetch · model: Haiku</text>
+<path d="M340 256 H598" class="ln"/><text x="470" y="248" class="xs c">brief</text>
+<path d="M600 284 H342" class="ln dash"/><text x="470" y="302" class="xs c">condensed, structured result</text>
+</g>
+<g>
+<rect x="600" y="340" width="320" height="110" rx="12" class="orange"/>
+<text x="620" y="370" class="h">Subagent C — fresh context</text>
+<text x="620" y="394" class="s">Sees only its brief, not the parent chat</text>
+<text x="620" y="416" class="xs">Task: verify claims &amp; citations</text>
+<text x="620" y="436" class="xs">Tools: web_fetch only · model: Sonnet</text>
+<path d="M340 381 H598" class="ln"/><text x="470" y="373" class="xs c">brief</text>
+<path d="M600 409 H342" class="ln dash"/><text x="470" y="427" class="xs c">condensed, structured result</text>
+</g>
+<rect x="40" y="475" width="880" height="128" rx="12" class="gray"/>
+<text x="60" y="503" class="h">A complete brief contains</text>
+<text x="60" y="527" class="s">• Objective, and why it matters</text>
+<text x="60" y="547" class="s">• Scope and boundaries — what NOT to do</text>
+<text x="60" y="567" class="s">• What's already covered + relevant facts</text>
+<text x="60" y="587" class="s">• Allowed tools · output format and length limit</text>
+<text x="500" y="503" class="h">Trade-offs</text>
+<text x="500" y="527" class="s">+ Parallel breadth, isolated clean contexts</text>
+<text x="500" y="547" class="s">+ Different tools / models per role</text>
+<text x="500" y="567" class="s">− Many times more tokens, coordination cost</text>
+<text x="500" y="587" class="s">− Harder to debug; avoid concurrent shared-state writes</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" role="img" aria-label="Claude Code configuration map">
+<title>Claude Code configuration map</title>
+<style>
+text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2937}
+.t{font-size:22px;font-weight:700}.h{font-size:15px;font-weight:600}.s{font-size:13px}
+.xs{font-size:11.5px;fill:#4b5563}.m{font-family:SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+.b{font-weight:700}.c{text-anchor:middle}.w{fill:#fff;font-weight:700;font-size:12px}
+.box{fill:#fff;stroke:#94a3b8;stroke-width:1.5}.gray{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}
+.blue{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.5}.orange{fill:#fff7ed;stroke:#f97316;stroke-width:1.5}
+.green{fill:#ecfdf5;stroke:#10b981;stroke-width:1.5}.red{fill:#fef2f2;stroke:#ef4444;stroke-width:1.5}
+.purple{fill:#f5f3ff;stroke:#8b5cf6;stroke-width:1.5}
+.ln{stroke:#475569;stroke-width:1.6;fill:none;marker-end:url(#a)}.bi{marker-start:url(#a)}
+.bus{stroke:#475569;stroke-width:1.6;fill:none}.dash{stroke-dasharray:6 4}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+<rect width="960" height="640" fill="#ffffff"/>
+<text x="40" y="46" class="t">Claude Code configuration map</text>
+<text x="40" y="70" class="xs">Instructions (CLAUDE.md) guide behaviour. Settings, permissions and hooks enforce it.</text>
+<rect x="40" y="90" width="420" height="270" rx="12" class="box"/>
+<text x="60" y="118" class="h">Memory — CLAUDE.md (loaded every session)</text>
+<rect x="60" y="134" width="380" height="42" rx="8" class="red"/><text x="76" y="160" class="s"><tspan class="b">Managed policy</tspan> — org-wide, can't be overridden</text>
+<rect x="60" y="184" width="380" height="42" rx="8" class="blue"/><text x="76" y="210" class="s"><tspan class="b">./CLAUDE.md</tspan> — project, shared via git</text>
+<rect x="60" y="234" width="380" height="42" rx="8" class="green"/><text x="76" y="260" class="s"><tspan class="b">~/.claude/CLAUDE.md</tspan> — you, all projects</text>
+<rect x="60" y="284" width="380" height="42" rx="8" class="purple"/><text x="76" y="310" class="s"><tspan class="b">.claude/rules/*.md</tspan> + paths: globs — scoped</text>
+<text x="60" y="348" class="xs">@path imports · /init to generate · /memory to edit · keep it short</text>
+<rect x="500" y="90" width="420" height="270" rx="12" class="box"/>
+<text x="520" y="118" class="h">Settings precedence (highest first)</text>
+<rect x="520" y="132" width="380" height="34" rx="8" class="gray"/><circle cx="538" cy="149" r="10" fill="#3b82f6"/><text x="538" y="153" class="w c">1</text><text x="556" y="154" class="s">Managed settings (IT / enterprise)</text>
+<rect x="520" y="172" width="380" height="34" rx="8" class="gray"/><circle cx="538" cy="189" r="10" fill="#3b82f6"/><text x="538" y="193" class="w c">2</text><text x="556" y="194" class="s">Command-line flags</text>
+<rect x="520" y="212" width="380" height="34" rx="8" class="gray"/><circle cx="538" cy="229" r="10" fill="#3b82f6"/><text x="538" y="233" class="w c">3</text><text x="556" y="234" class="s">.claude/settings.local.json — personal</text>
+<rect x="520" y="252" width="380" height="34" rx="8" class="gray"/><circle cx="538" cy="269" r="10" fill="#3b82f6"/><text x="538" y="273" class="w c">4</text><text x="556" y="274" class="s">.claude/settings.json — team, checked in</text>
+<rect x="520" y="292" width="380" height="34" rx="8" class="gray"/><circle cx="538" cy="309" r="10" fill="#3b82f6"/><text x="538" y="313" class="w c">5</text><text x="556" y="314" class="s">~/.claude/settings.json — user defaults</text>
+<text x="520" y="348" class="xs">permissions: allow · ask · deny — <tspan class="b">deny always wins</tspan></text>
+<text x="40" y="392" class="h">Extension points — choose by need</text>
+<g transform="translate(40,405)"><rect width="280" height="100" rx="10" class="red"/><text x="16" y="28" class="h">Hook</text><text x="16" y="48" class="xs m">settings.json → hooks</text><text x="16" y="72" class="s">MUST always happen →</text><text x="16" y="90" class="s">deterministic; exit 2 blocks</text></g>
+<g transform="translate(340,405)"><rect width="280" height="100" rx="10" class="green"/><text x="16" y="28" class="h">Skill</text><text x="16" y="48" class="xs m">.claude/skills/&lt;name&gt;/SKILL.md</text><text x="16" y="72" class="s">Reusable procedure + scripts,</text><text x="16" y="90" class="s">loaded on demand</text></g>
+<g transform="translate(640,405)"><rect width="280" height="100" rx="10" class="orange"/><text x="16" y="28" class="h">Subagent</text><text x="16" y="48" class="xs m">.claude/agents/&lt;name&gt;.md</text><text x="16" y="72" class="s">Isolated context with its own</text><text x="16" y="90" class="s">tools and model</text></g>
+<g transform="translate(40,520)"><rect width="280" height="100" rx="10" class="blue"/><text x="16" y="28" class="h">Slash command</text><text x="16" y="48" class="xs m">.claude/commands/&lt;name&gt;.md</text><text x="16" y="72" class="s">A prompt you trigger by name,</text><text x="16" y="90" class="s">with $ARGUMENTS</text></g>
+<g transform="translate(340,520)"><rect width="280" height="100" rx="10" class="purple"/><text x="16" y="28" class="h">MCP server</text><text x="16" y="48" class="xs m">.mcp.json · claude mcp add</text><text x="16" y="72" class="s">External tools and live data,</text><text x="16" y="90" class="s">shared across clients</text></g>
+<g transform="translate(640,520)"><rect width="280" height="100" rx="10" class="gray"/><text x="16" y="28" class="h">Plan mode · headless</text><text x="16" y="48" class="xs m">Shift+Tab · claude -p</text><text x="16" y="72" class="s">Plan: read-only, review first</text><text x="16" y="90" class="s">-p: CI runs with --max-turns</text></g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 490" width="960" height="490" role="img" aria-label="Case facts block versus progressive summarisation">
+<title>Case facts block versus progressive summarisation</title>
+<style>
+text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2937}
+.t{font-size:22px;font-weight:700}.h{font-size:15px;font-weight:600}.s{font-size:13px}
+.xs{font-size:11.5px;fill:#4b5563}.m{font-family:SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+.b{font-weight:700}.c{text-anchor:middle}.w{fill:#fff;font-weight:700;font-size:12px}
+.box{fill:#fff;stroke:#94a3b8;stroke-width:1.5}.gray{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}
+.blue{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.5}.orange{fill:#fff7ed;stroke:#f97316;stroke-width:1.5}
+.green{fill:#ecfdf5;stroke:#10b981;stroke-width:1.5}.red{fill:#fef2f2;stroke:#ef4444;stroke-width:1.5}
+.purple{fill:#f5f3ff;stroke:#8b5cf6;stroke-width:1.5}
+.ln{stroke:#475569;stroke-width:1.6;fill:none;marker-end:url(#a)}.bi{marker-start:url(#a)}
+.bus{stroke:#475569;stroke-width:1.6;fill:none}.dash{stroke-dasharray:6 4}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+<rect width="960" height="490" fill="#ffffff"/>
+<text x="40" y="46" class="t">Long conversations — keep exact facts out of the summary</text>
+<text x="40" y="70" class="xs">Repeated summarisation drifts. A verbatim case-facts block does not.</text>
+<rect x="40" y="90" width="420" height="380" rx="12" class="box"/>
+<text x="60" y="120" class="h">✗ Progressive summarisation</text>
+<rect x="70" y="140" width="360" height="60" rx="8" class="gray"/><text x="86" y="162" class="xs">Turn 4 (verbatim)</text><text x="86" y="184" class="s">Refund agreed: $187.40 on ORD-004512</text>
+<path d="M250 200 V248" class="ln"/><text x="262" y="228" class="xs">summarise</text>
+<rect x="70" y="250" width="360" height="60" rx="8" class="orange"/><text x="86" y="272" class="xs">Summary v1</text><text x="86" y="294" class="s">Customer agreed a refund of about $187</text>
+<path d="M250 310 V358" class="ln"/><text x="262" y="338" class="xs">summarise again</text>
+<rect x="70" y="360" width="360" height="60" rx="8" class="red"/><text x="86" y="382" class="xs">Summary v2</text><text x="86" y="404" class="s">Customer is getting a partial refund</text>
+<text x="60" y="452" class="xs">Numbers, IDs, dates and commitments are lost first.</text>
+<rect x="500" y="90" width="420" height="380" rx="12" class="box"/>
+<text x="520" y="120" class="h">✓ Case facts block + summary</text>
+<rect x="530" y="138" width="360" height="98" rx="8" class="green"/>
+<text x="546" y="158" class="xs b">CASE FACTS — verbatim, updated explicitly</text>
+<text x="546" y="180" class="m">order_id: ORD-004512</text>
+<text x="546" y="200" class="m">refund:   $187.40 (approved turn 4)</text>
+<text x="546" y="220" class="m">limit:    $200 · tier: gold</text>
+<rect x="530" y="246" width="360" height="44" rx="8" class="gray"/><text x="710" y="273" class="s c">Summary of older turns</text>
+<rect x="530" y="300" width="360" height="44" rx="8" class="gray"/><text x="710" y="327" class="s c">Recent turns (verbatim)</text>
+<rect x="530" y="354" width="360" height="44" rx="8" class="blue"/><text x="710" y="381" class="s c">Current question</text>
+<text x="520" y="430" class="xs">Lost in the middle: keep key facts at the start, or repeat them</text>
+<text x="520" y="448" class="xs">near the question. Never re-summarise the facts block.</text>
+</svg>
