@@ -4,7 +4,12 @@ Target exam date: ____
 
 | Date | Activity | D1 | D2 | D3 | D4 | D5 | Total | Notes |
 |---|---|---|---|---|---|---|---|---|
-| | Baseline practice questions | | | | | | | |
+| | Diagnostic (21 Qs) | | | | | | | |
+| | Set 1 — D1 (15 Qs) | | — | — | — | — | | |
+| | Set 2 — D2 (15 Qs) | — | | — | — | — | | |
+| | Set 3 — D3 (15 Qs) | — | — | | — | — | | |
+| | Set 4 — D4 (15 Qs) | — | — | — | | — | | |
+| | Set 5 — D5 (15 Qs) | — | — | — | — | | | |
 
 ## Weak spots
 -

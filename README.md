@@ -45,7 +45,7 @@ cheat-sheet.md          one-page last-minute review
 resources.md            official docs and courses to read
 domains/                deep notes, one file per domain
 diagrams/               SVG diagrams (embedded in the domain notes)
-practice/questions.md   scenario-style practice questions with explained answers
+practice/               diagnostic + 5 domain practice sets (96 questions, explained answers)
 flashcards/cards.csv    flashcards (front,back,domain), importable into Anki
 labs/                   hands-on exercises to do with the API and Claude Code
 progress.md             tracker for scores and weak spots
@@ -53,7 +53,7 @@ progress.md             tracker for scores and weak spots
 
 ## How to use this repo
 
-1. Take the practice questions cold and record your score in [progress.md](progress.md).
-2. Follow [study-plan.md](study-plan.md), weighting time toward D1 and your weakest domains.
+1. Take the [diagnostic](practice/questions.md) cold and record your score in [progress.md](progress.md).
+2. Follow [study-plan.md](study-plan.md), weighting time toward D1 and your weakest domains, and finish each domain with its [practice set](practice/README.md).
 3. Do the [labs](labs/README.md). The exam is scenario-based, so hands-on experience matters more than memorising facts.
 4. Review with the flashcards each day and use the cheat sheet the night before.
