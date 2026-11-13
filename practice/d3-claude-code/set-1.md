@@ -1,6 +1,6 @@
-# Practice Set 3 — Claude Code Configuration & Workflows (D3, 20%)
+# D3 Practice Set 1 — Claude Code Configuration & Workflows (20%)
 
-15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Notes: [../domains/d3-claude-code.md](../domains/d3-claude-code.md)
+15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Notes: [../domains/d3-claude-code.md](../../domains/d3-claude-code.md)
 
 ---
 

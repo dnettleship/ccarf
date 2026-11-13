@@ -1,6 +1,6 @@
-# Practice Set 5 — Context Management & Reliability (D5, 15%)
+# D5 Practice Set 1 — Context Management & Reliability (15%)
 
-15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Notes: [../domains/d5-context-reliability.md](../domains/d5-context-reliability.md)
+15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Notes: [../domains/d5-context-reliability.md](../../domains/d5-context-reliability.md)
 
 ---
 

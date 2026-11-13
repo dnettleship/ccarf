@@ -1,6 +1,6 @@
-# Practice Set 2 — Tool Design & MCP Integration (D2, 18%)
+# D2 Practice Set 1 — Tool Design & MCP Integration (18%)
 
-15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Notes: [../domains/d2-tool-design-mcp.md](../domains/d2-tool-design-mcp.md)
+15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Notes: [../domains/d2-tool-design-mcp.md](../../domains/d2-tool-design-mcp.md)
 
 ---
 

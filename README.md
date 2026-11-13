@@ -45,7 +45,7 @@ cheat-sheet.md          one-page last-minute review
 resources.md            official docs and courses to read
 domains/                deep notes, one file per domain
 diagrams/               SVG diagrams (embedded in the domain notes)
-practice/               diagnostic + 5 domain practice sets (96 questions, explained answers)
+practice/               diagnostic + 3 sets per domain (246 questions, explained answers)
 flashcards/cards.csv    flashcards (front,back,domain), importable into Anki
 labs/                   hands-on exercises to do with the API and Claude Code
 progress.md             tracker for scores and weak spots

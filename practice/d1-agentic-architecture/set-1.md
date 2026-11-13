@@ -1,6 +1,6 @@
-# Practice Set 1 — Agentic Architecture & Orchestration (D1, 27%)
+# D1 Practice Set 1 — Agentic Architecture & Orchestration (27%)
 
-15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Answers are in collapsed sections. Notes: [../domains/d1-agentic-architecture.md](../domains/d1-agentic-architecture.md)
+15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Answers are in collapsed sections. Notes: [../domains/d1-agentic-architecture.md](../../domains/d1-agentic-architecture.md)
 
 ---
 

@@ -1,6 +1,6 @@
-# Practice Set 4 — Prompt Engineering & Structured Output (D4, 20%)
+# D4 Practice Set 1 — Prompt Engineering & Structured Output (20%)
 
-15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Notes: [../domains/d4-prompt-engineering.md](../domains/d4-prompt-engineering.md)
+15 original scenario-style questions (not real exam items). Give yourself **30 minutes**. Notes: [../domains/d4-prompt-engineering.md](../../domains/d4-prompt-engineering.md)
 
 ---
 
