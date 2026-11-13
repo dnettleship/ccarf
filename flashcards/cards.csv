@@ -1,0 +1,42 @@
+front,back,domain
+"Workflow vs agent?","Workflow: LLM calls on predefined code paths. Agent: the LLM dynamically directs its own steps and tool use. Start simple.",D1
+"Five workflow patterns (Building effective agents)","Prompt chaining, routing, parallelisation (sectioning/voting), orchestrator-workers, evaluator-optimiser",D1
+"stop_reason values","end_turn, tool_use, max_tokens, stop_sequence, pause_turn, refusal",D1
+"What to do on stop_reason tool_use","Run every tool_use block, then send tool_result blocks (matching tool_use_id) in the next user message, first in its content",D1
+"Do subagents inherit the parent conversation?","No. Their prompt must contain the objective, constraints, relevant facts, scope and output format.",D1
+"When is multi-agent worth it?","Breadth-first, parallelisable work that needs separate contexts or tools. It costs many more tokens and is harder to debug.",D1
+"Required safety in any agent loop","Iteration/turn cap, token or cost budget, timeout",D1
+"How to enforce a 'must never' rule in an agent","Deterministically: hooks, permissions, or validation inside the tool, not just the prompt",D1
+"Most important part of a tool definition","The description: what it does, when to use it and when not to, parameter meanings and formats, what it returns",D2
+"tool_choice options","auto (default), any (must use some tool), tool (force a named tool), none",D2
+"How to report a tool failure","tool_result with is_error: true and an actionable message",D2
+"Four tool error categories","Transient (retry), validation (fix input), business rule (don't retry; explain or escalate), permission (route to approval)",D2
+"Three MCP server primitives and who controls them","Tools (model), Resources (application), Prompts (user)",D2
+"MCP transports","stdio (local) and Streamable HTTP (remote; replaced HTTP+SSE)",D2
+"Claude Code MCP scopes","local (you, this project), project (.mcp.json, shared), user (you, all projects)",D2
+"Skill vs MCP tool","Skill = packaged instructions and scripts loaded on demand (progressive disclosure). MCP tool = action or live data from an external system.",D2
+"CLAUDE.md levels","Managed policy > project (./CLAUDE.md) > user (~/.claude/CLAUDE.md); local via CLAUDE.local.md or imports",D3
+"Import another file into CLAUDE.md","@path/to/file",D3
+"Path-scoped instructions in Claude Code","Files in .claude/rules/*.md with paths: glob frontmatter",D3
+"Settings precedence","Managed > CLI args > .claude/settings.local.json > .claude/settings.json > ~/.claude/settings.json",D3
+"Permission modes","default, acceptEdits, plan, bypassPermissions",D3
+"Hook exit code that blocks an action","Exit code 2 (stderr is fed back to Claude)",D3
+"Main hook events","PreToolUse, PostToolUse, UserPromptSubmit, Notification, Stop, SubagentStop, PreCompact, SessionStart, SessionEnd",D3
+"SKILL.md required frontmatter","name and description",D3
+"Where custom subagents live","./.claude/agents/*.md (project) or ~/.claude/agents/ (user)",D3
+"Headless Claude Code","claude -p ""prompt"" --output-format json --max-turns N --allowedTools ...",D3
+"/compact vs /clear","/compact summarises the history; /clear resets the context entirely",D3
+"Do checkpoints replace git?","No. Bash-driven and external changes aren't tracked.",D3
+"Most reliable structured output","Structured outputs (constrained decoding) or a forced tool call with a schema, then validate in code with a retry loop",D4
+"Why make extraction fields nullable?","Required fields push the model to invent values when the source lacks them",D4
+"Where to put long documents in a prompt","At the top, with the query and instructions at the end. Ask for quotes first.",D4
+"Best lever for consistent format","3–5 diverse examples in <example> tags",D4
+"4D AI Fluency framework","Delegation, Description, Discernment, Diligence",D4
+"Lost in the middle","Facts in the middle of long contexts are used less reliably. Put key facts at the start or end.",D5
+"Case facts block","Verbatim, authoritative block of key facts (IDs, amounts, decisions), never re-summarised",D5
+"Prompt caching TTLs","5 minutes default (refreshed on hit); 1 hour optional at higher write cost",D5
+"Prompt cache order","tools → system → messages. A change invalidates everything after it.",D5
+"Cache usage fields","cache_creation_input_tokens, cache_read_input_tokens",D5
+"Max cache breakpoints","4",D5
+"Message Batches API","About 50% cheaper and asynchronous (within 24h). For non-urgent bulk work.",D5
+"Retryable API errors","429 rate limit, 529 overloaded, 5xx. Use exponential backoff with jitter. Don't retry 400s.",D5
